@@ -1,14 +1,13 @@
 <?php
 
 /*
-Plugin Name: Date/Time Picker for Piklist.
+Plugin Name: Date/Time Picker for Piklist
 Plugin URI: http://neuralquery.com/
 Description: Date/Time Picker for the awesome Piklist framework.
 Version: 1.0
 Author: Daniel Rampanelli
 Author URI: http://neuralquery.com/
 Plugin Type: Piklist
-License: Proprietary
 */
 
 add_action('admin_enqueue_scripts', function() {
