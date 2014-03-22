@@ -7,20 +7,11 @@ This WordPress plugin offers a *datetimepicker* Piklist field type, based on the
 This plugin is not yet published on the official plugin repository so you can either download and install it manually or, if you are using Composer, you can add this repository to your installation's `composer.json` file like this
 
 	"repositories": [{
-        "type": "package",
-        "package": {
-            "name": "neuralquery/piklist-datetimepicker",
-            "version": "1.0",
-            "type": "wordpress-plugin",
-            "source": {
-                "url": "https://github.com/neuralquery/piklist-datetimepicker",
-                "type": "git",
-                "reference": "master"
-            }
-        }
+        "type": "vcs",
+        "url": "https://github.com/neuralquery/piklist-datetimepicker"
     }],
     "require": {
-        "neuralquery/piklist-datetimepicker": "*"
+        "neuralquery/piklist-datetimepicker": "@dev"
     }
 
 ## Usage
