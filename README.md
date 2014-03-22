@@ -32,4 +32,11 @@ You can use this field type by defining a field like this
 		'scope' => 'post_meta',
 		'field' => 'your_field_name',
 		'label' => 'Date/Time',
+		'options' => array(
+			'format' => 'DD/MM/YYYY hh:mm',
+			'pick12HourFormat' => FALSE,
+			'sideBySide' => TRUE,
+		),
 	));
+
+For the complete list of options that can be defined, please consult [this](http://eonasdan.github.io/bootstrap-datetimepicker/#options) page.
