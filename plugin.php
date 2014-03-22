@@ -34,6 +34,10 @@ add_filter('piklist_pre_render_field', function($field) {
 	if ($field['type'] == 'datetimepicker') {
 		wp_enqueue_script('neuralquery-datetimepicker');
 		
+		if (!empty($field['js_callback'])) {
+			$field['other_js_callback'] = $field['js_callback'];
+		}
+		
 		$field['js_callback'] = 'neuralquery_datetimepicker_initialize';
 	}
 	
