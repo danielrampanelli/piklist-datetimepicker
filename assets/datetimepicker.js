@@ -2,6 +2,7 @@
     $.widget('neuralquery.datetimepickerproxy', {
         
         options: {
+            utc: false,
             timestamp: false
         },
         
@@ -33,21 +34,27 @@
                 if (this.options.timestamp) {
                     this.picker.setDate(moment.unix(parseInt(value)));
                 } else {
-                    this.picker.setDate(moment(value, this.options.format));
+                    if (this.options.utc) {
+                        this.picker.setDate(moment.utc(value, this.options.format).local());
+                    } else {
+                        this.picker.setDate(moment(value, this.options.format));
+                    }
                 }
             }
         },
         
-        changed: function(moment) {
+        changed: function(datetime) {
             this.element.val('');
             
-            console.log(moment);
-            
-            if (moment) {
-                this.element.val(moment.format(this.options.format));
+            if (datetime) {
+                if (this.options.utc) {
+                    datetime = moment(datetime).utc();
+                }
+                
+                this.element.val(datetime.format(this.options.format));
                 
                 if (this.options.timestamp) {
-                    this.element.val(moment.unix());
+                    this.element.val(datetime.unix());
                 }
             }
         }
